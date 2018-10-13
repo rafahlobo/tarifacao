@@ -9,6 +9,8 @@ Exemplo prático :
 	Joãozinho ligou  para Maria. Joãozinho falou 31 segundos e desligou. Joãozinho pagará uma tarifa proporcional a 36 segundos, considerando a cadência de "3+30+6".
 
 Debug :	
+Valor da tarifca por minuto = R$ 1,00;
+
  1. Joãozinho ligou. ( Tempo cobrado : 0 s) - (Tempo real em linha : 0 s )
  2. Maria atendeu. ( Tempo cobrado : 0 s) - (Tempo real em linha : 0 s )
  3. Completou 3 segundos.  ( Tempo cobrado : 30 s) - (Tempo real em linha : 3 s )
@@ -21,3 +23,9 @@ Debug :
  10. Maria lembrou de algo..  ( Tempo cobrado : 42 s) - (Tempo real em linha : 38 s )  
 
 	 
+## Código
+    <?php
+	    include "tarifacao.php";
+	    $valor_ligacao  = calc_tarifa(1.0 , 38, "3+30+6");
+	    echo "Joaozinho pagará   $valor_ligacao  reais";
+	    
